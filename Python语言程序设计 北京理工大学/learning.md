@@ -109,37 +109,6 @@ pyinstaller –i curve.ico –F SevenDigitsDrawV2.py
 ```
 
 
-# 文本进度条
-import time 
-scale = 50 
-print("执行开始".center(scale//2, "-")) 
-start = time.perf_counter() 
-for i in range(scale+1): 
-    a = '*' * i 
-    b = '.' * (scale - i) 
-    c = (i/scale)*100
-    dur = time.perf_counter() - start 
-    print("\r{:^3.0f}%[{}->{}]{:.2f}s".format(c,a,b,dur),end='') 
-    time.sleep(0.1) 
-
-
-# 计算圆周率
-from random import random 
-from time import perf_counter 
-DARTS = 1000 * 1000 
-hits = 0.0 
-start = perf_counter() 
-for i in range(1, DARTS+1): 
-    x, y = random(), random() 
-    dist = pow(x ** 2 + y ** 2, 0.5) 
-    if dist <= 1.0: 
-        hits = hits + 1 
-pi = 4 * (hits/DARTS) 
-print("圆周率值是: {}".format(pi)) 
-print("运行时间是: {:.5f}s".format(perf_counter()-start))
-
-
-
 
 
 
